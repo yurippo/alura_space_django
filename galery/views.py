@@ -18,7 +18,17 @@ from django.shortcuts import render
 
 #this function is responsible for the main page of our application to be able to respond to a request
 def index(request):
-    return render(request, 'galery/index.html')
+
+    data = {
+         1: {"name": "Nebulosa de Carina",
+            "captions": "Webbtelescope.org / NASA / James Webb"},
+         2: {"name": "Galaxy NGC 1079",
+            "captions": "nasa.org / NASA / Hubble"},
+    }
+
+    
+    return render(request, 'galery/index.html', {"cards":data})
+
 
 def imagem(request):
     return render(request, 'galery/imagem.html' )
